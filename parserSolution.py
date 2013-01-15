@@ -42,7 +42,8 @@ i = 0
 for line in open('inputfile.txt','r'):
   i += 1
   pass
-  if i == 14:
+  if i == 19:
+    print line
     #sent = "dogs bark".split()
     #sent = line.split()
     #sent = wordpunct_tokenize(line)
@@ -56,6 +57,7 @@ for line in open('inputfile.txt','r'):
     #line = "Do you have pain in the muscles on the side of the face?"
     #line = "Scientists finally realized that DNA controls heredity."
     #line = "A pain in the abdomen lasting more than a week could be appendicitis."
+    #line = "There is much research on the growth of muscles."
     sent = wordpunct_tokenize(line)
     print sent , '\n'
     pp = parser.parse(sent)
