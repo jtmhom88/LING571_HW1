@@ -42,7 +42,7 @@ i = 0
 for line in open('inputfile.txt','r'):
   i += 1
   pass
-  if i == 10:
+  if i == 11:
     #sent = "dogs bark".split()
     #sent = line.split()
     #sent = wordpunct_tokenize(line)
@@ -51,9 +51,10 @@ for line in open('inputfile.txt','r'):
     #line = "An average adult male is made up of 45% skeletal muscle and an average adult female is made up of 35% skeletal muscle."
     #line = "Old people are at risk for arthritis."
     #line = "The action is determined by the origin and insertion locations."
-    line = "Do you have pain ?"
     #line = "A pain in the abdomen is appendicitis."
     #line  = "The motor system  is responsible."
+    #line = "Do you have pain in the muscles on the side of the face?"
+    line = "Scientists finally realized that DNA controls heredity."
     sent = wordpunct_tokenize(line)
     print sent , '\n'
     pp = parser.parse(sent)
