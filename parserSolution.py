@@ -42,7 +42,7 @@ i = 0
 for line in open('inputfile.txt','r'):
   i += 1
   pass
-  if i <= 12:
+  if i <= 13:
     #sent = "dogs bark".split()
     #sent = line.split()
     #sent = wordpunct_tokenize(line)
