@@ -9,6 +9,10 @@ __author__ = 'johnnyhom@gmail.com (Johnny Hom)'
 
 import nltk
 from nltk.tokenize import wordpunct_tokenize 
+from sys import argv
+
+script, inlineno = argv
+print "Line requested: ", inlineno
 
 gstring = open('solutiongrammar.cfg', 'r').read()
 grammar1 = nltk.parse_cfg(gstring)
@@ -33,7 +37,7 @@ grammar1 = nltk.parse_cfg(gstring)
 #"""
 #)
 
-print grammar1 , '\n'
+#print grammar1 , '\n'
 
 #parser = nltk.RecursiveDescentParser(grammar1)
 parser = nltk.parse.EarleyChartParser(grammar1)
@@ -42,7 +46,7 @@ i = 0
 for line in open('inputfile.txt','r'):
   i += 1
   pass
-  if i <= 20:
+  if i == int(inlineno):
     print line
     #sent = "dogs bark".split()
     #sent = line.split()
@@ -61,10 +65,15 @@ for line in open('inputfile.txt','r'):
     #line = "Few people privy to the research ."
     sent = wordpunct_tokenize(line)
     print sent , '\n'
-    pp = parser.parse(sent)
-    print pp, '\n'
-    #break
+    #pp = parser.parse(sent)
+    pp = parser.nbest_parse(sent)
+    j = 0
+    for p in pp:
+      j += 1
+      print "Parse: ", j, "\n", p, "\n"
+      #break
     pass
+    print "Number of parses: %d" % j
   
 
 
